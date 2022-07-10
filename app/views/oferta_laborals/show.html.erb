@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cargo:</strong>
+  <%= @oferta_laboral.cargo %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @oferta_laboral.descripcion %>
+</p>
+
+<p>
+  <strong>Vacantes:</strong>
+  <%= @oferta_laboral.vacantes %>
+</p>
+
+<p>
+  <strong>Rango minimo:</strong>
+  <%= @oferta_laboral.rango_minimo %>
+</p>
+
+<p>
+  <strong>Rango maximo:</strong>
+  <%= @oferta_laboral.rango_maximo %>
+</p>
+
+<p>
+  <strong>Fecha inicio:</strong>
+  <%= @oferta_laboral.fecha_inicio %>
+</p>
+
+<%= link_to 'Edit', edit_oferta_laboral_path(@oferta_laboral) %> |
+<%= link_to 'Back', oferta_laborals_path %>

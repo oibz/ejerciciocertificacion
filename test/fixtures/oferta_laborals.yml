@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cargo: MyString
+  descripcion: MyText
+  vacantes: 1
+  rango_minimo: 1
+  rango_maximo: 1
+  fecha_inicio: 2022-07-10 00:31:27
+
+two:
+  cargo: MyString
+  descripcion: MyText
+  vacantes: 1
+  rango_minimo: 1
+  rango_maximo: 1
+  fecha_inicio: 2022-07-10 00:31:27

@@ -1,0 +1,51 @@
+<h1>Mi Empresa</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rut:</strong>
+  <%= @empresa.rut %>
+</p>
+
+<p>
+  <strong>Razon social:</strong>
+  <%= @empresa.razon_social %>
+</p>
+
+<p>
+  <strong>Representante legal:</strong>
+  <%= @empresa.representante_legal %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @empresa.direccion %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @empresa.telefono %>
+</p>
+
+
+<h2>Mis avisos</h2>
+<table class="table">
+<th>Cargo</th>
+<th>Descripción</th>
+<th>Vacantes</th>
+<th>Sueldo</th>
+<th>Acciones</th>
+<% if @oferta_laboral = OfertaLaboral.find_by(empresas_id: @empresa) %>
+<tr>
+<td><%= @oferta_laboral.cargo %></td>
+<td><%= @oferta_laboral.descripcion %></td>
+<td><%= @oferta_laboral.vacantes %></td>
+<td><%= @oferta_laboral.rango_minimo %> - <%= @oferta_laboral.rango_maximo %></td>
+</tr>
+<% end %>
+
+</table>
+  <%= link_to 'Agregar oferta', new_oferta_laboral_url(:empresa => @empresa) %>
+<br>
+<%= link_to 'Edit', edit_empresa_path(@empresa) %> |
+<%= link_to 'Back', empresas_path %>

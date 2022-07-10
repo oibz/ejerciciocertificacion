@@ -1,0 +1,60 @@
+<%= form_with(model: oferta_laboral) do |form| %>
+  <% if oferta_laboral.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(oferta_laboral.errors.count, "error") %> prohibited this oferta_laboral from being saved:</h2>
+
+      <ul>
+        <% oferta_laboral.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cargo %>
+    <%= form.text_field :cargo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_area :descripcion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vacantes %>
+    <%= form.number_field :vacantes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rango_minimo %>
+    <%= form.number_field :rango_minimo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rango_maximo %>
+    <%= form.number_field :rango_maximo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_inicio %>
+    <%= form.datetime_select :fecha_inicio %>
+  </div>
+
+    <div class="field">
+      <%= form.collection_select(:regiones_id, Regione.all, :id, :nombre, prompt: true) %>
+  </div>
+
+  <div class="field">
+      <%= form.collection_select(:tipo_oferta_id, TipoOfertum.all, :id, :descripcion, prompt: true) %>
+  </div>
+
+      <div class="field">
+    <%= form.label :empresas_id %>
+    <%= form.number_field :empresas_id, :readonly => 'true', :value => params[:empresa]%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
