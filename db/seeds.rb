@@ -43,3 +43,13 @@ TipoOfertum.create([
 ])
 
 puts 'Tipos creados!!!'
+
+puts 'Creando Usuario Empresa'
+
+UserEmpresa.destroy_all
+
+TipoOfertum.create([
+  {email: 'empresa@gmail.com', password: '123456'},
+])
+
+puts 'Tipos creados!!!'
